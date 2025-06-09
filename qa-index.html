@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Ninja Page</title>
+    <link rel="stylesheet" href="css/newAccordionStyles.css">
+    <link rel="stylesheet" href="css/sliders.css">
+    <link rel="stylesheet" href="css/api.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <!-- Using an image as header, similar to the original prd-index.html -->
+    <img src="https://placehold.co/1200x150/111827/FFFFFF?text=QA+Ninja+Platform&font=inter" alt="QA Ninja Banner">
+</header>
+
+<!-- Main Page Container -->
+<div class="page-container">
+
+    <!-- Left Menu (from prd-index.html) -->
+    <nav id="left-menu" class="sidebar">
+        <ul>
+            <li><a href="prd-index.html">Main</a></li>
+            <li>
+                <span onclick="toggleSubmenu(this)">Elements</span>
+                <ul id="elements-submenu">
+                    <li><a href="#" data-content="Buttons">Buttons</a></li>
+                    <li><a href="#" data-content="CheckBox">CheckBox</a></li>
+                    <li><a href="#" data-content="RadioButton">RadioButton</a></li>
+                    <li><a href="#" data-content="Sliders">Sliders</a></li>
+                    <li><a href="#" data-content="TextBox">TextBox</a></li>
+                </ul>
+            </li>
+            <li>
+                <span onclick="toggleSubmenu(this)">Interactions</span>
+                <ul id="interactions-submenu">
+                    <li><a href="#" data-content="Api">API</a></li>
+                </ul>
+            </li>
+            <li>
+                <span onclick="toggleSubmenu(this)">Widgets</span>
+                <ul id="widgets-submenu">
+                    <li><a href="#" data-content="Accordion">Accordion</a></li>
+                    <li><a href="#" data-content="DatePicker">DatePicker</a></li>
+                    <li><a href="#" data-content="DropDown">DropDown</a></li>
+                    <li><a href="#" data-content="Menu">Menu</a></li>
+                    <li><a href="#" data-content="Tabs">Tabs</a></li>
+                </ul>
+            </li>
+            <li>
+                <span onclick="toggleSubmenu(this)">Windows</span>
+                <ul id="alerts-submenu">
+                    <li><a href="#" data-content="Alerts">Alerts</a></li>
+                    <li><a href="#" data-content="Frames">Frames</a></li>
+                    <li><a href="#" data-content="Windows">Windows</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content (Dynamically Loaded) -->
+    <main id="content">
+        <h2>Welcome</h2>
+        <p>This project outlines the development of a dedicated website designed exclusively for testing purposes. This platform will house a diverse array of elements and navigation options, meticulously crafted to facilitate the development and refinement of automation frameworks for Software Development Engineers in Test (SDETs).</p>
+        <p>By providing a controlled and varied environment, this testing website aims to be an invaluable asset in building robust and efficient automation solutions.</p>
+        <center><img src="https://placehold.co/600x300/CCCCCC/FFFFFF?text=Web+Design+Placeholder&font=inter" alt="Web Design Image" style="max-width:100%; height:auto; border-radius: 8px; margin-top: 20px;"></center>
+    </main>
+
+    <!-- Right Menu -->
+    <aside id="right-menu" class="sidebar">
+        <h3>Right Menu</h3>
+        <p>This menu can contain additional information, test configurations, or user profiles.</p>
+        <p>It's a flexible space for future expansions.</p>
+    </aside>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>This project was created using Gemini AI.</p>
+</footer>
+
+<!-- Scripts from your original project (make sure the paths are correct) -->
+<!-- <script src="js/accordionLib.js"></script>
+<script src="js/alertsLib.js"></script>
+... (all other scripts) ...
+<script src="js/uiInteractions.js"></script> -->
+
+<script>
+    // Function to expand/collapse submenus
+    function toggleSubmenu(element) {
+        const submenu = element.nextElementSibling;
+        if (submenu) {
+            const isDisplayed = submenu.style.display === 'block';
+            submenu.style.display = isDisplayed ? 'none' : 'block';
+        }
+    }
+
+    // Dynamic content loading simulation (logic from uiInteractions.js)
+    document.querySelectorAll('.sidebar a[data-content]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const contentName = this.getAttribute('data-content');
+            const contentArea = document.getElementById('content');
+
+            // Simulates content loading
+            contentArea.innerHTML = `<h2>${contentName}</h2><p>Content for <strong>${contentName}</strong> would be displayed here. Implement the loading logic from your HTML/JS files.</p>`;
+        });
+    });
+</script>
+</body>
+</html>

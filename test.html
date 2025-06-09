@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Desplegable Superior</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+        .top-nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .top-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .top-nav > ul > li {
+            float: left;
+        }
+        .top-nav li a, .top-nav li .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .top-nav li a:hover, .top-nav li .dropbtn:hover, .dropdown:hover .dropbtn {
+            background-color: #555;
+        }
+        .top-nav li.dropdown {
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .content-area {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            min-height: 150px; /* Para asegurar que el área de contenido sea visible */
+        }
+        .content-area h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="top-nav">
+    <ul>
+        <li><a href="#" onclick="showContent('qaTools')">QA Tools</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Automation Tools</a>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('selenium')">Selenium</a>
+                <a href="#" onclick="showContent('appium')">Appium</a>
+                <a href="#" onclick="showContent('playwright')">Playwright</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Performance Testing</a>
+            <div class="dropdown-content">
+                <a href="#" onclick="showContent('loadrunner')">LoadRunner</a>
+                <a href="#" onclick="showContent('jmeter')">JMeter</a>
+                <a href="#" onclick="showContent('neoload')">NeoLoad</a>
+                <a href="#" onclick="showContent('k6')">K6</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<div id="infoDisplay" class="content-area" style="display:none;">
+    <h2 id="contentTitle"></h2>
+    <p id="contentText"></p>
+</div>
+
+<script>
+    const contentData = {
+        qaTools: {
+            title: "Beneficios de Herramientas de QA",
+            text: "Las herramientas de QA son cruciales para asegurar la calidad del software. Facilitan la detección temprana de errores, mejoran la eficiencia del proceso de pruebas, reducen costos a largo plazo al prevenir fallos en producción, y aumentan la confianza en el producto final. Permiten automatizar tareas repetitivas, gestionar casos de prueba, reportar defectos de manera efectiva y realizar un seguimiento detallado del progreso de las pruebas, lo que resulta en un software más robusto y fiable."
+        },
+        selenium: {
+            title: "Selenium",
+            text: "Selenium es un framework de código abierto ampliamente utilizado para la automatización de pruebas de aplicaciones web. Soporta múltiples lenguajes de programación como Java, Python, C#, Ruby y JavaScript. Permite a los testers escribir scripts que interactúan con los navegadores web de la misma forma que lo haría un usuario, validando funcionalidades y comportamientos. Es compatible con la mayoría de los navegadores modernos."
+        },
+        appium: {
+            title: "Appium",
+            text: "Appium es una herramienta de automatización de pruebas de código abierto para aplicaciones móviles nativas, híbridas y web móviles en plataformas iOS, Android y Windows. Utiliza el protocolo WebDriver, lo que permite escribir pruebas en diversos lenguajes de programación. Appium interactúa con las aplicaciones de la misma manera que un usuario, sin necesidad de modificar el código de la aplicación."
+        },
+        playwright: {
+            title: "Playwright",
+            text: "Playwright es un framework de automatización de código abierto desarrollado por Microsoft para pruebas end-to-end. Permite la automatización de navegadores Chromium, Firefox y WebKit con una única API. Es conocido por su velocidad, fiabilidad y capacidades como la auto-espera, interceptación de red y la posibilidad de emular dispositivos móviles y permisos."
+        },
+        loadrunner: {
+            title: "LoadRunner",
+            text: "LoadRunner, ahora parte de Micro Focus, es una herramienta de pruebas de rendimiento líder en la industria. Permite simular miles de usuarios concurrentes para medir el comportamiento y la respuesta de las aplicaciones bajo carga. Ofrece un amplio rango de protocolos y tecnologías, y proporciona análisis detallados para identificar cuellos de botella y optimizar el rendimiento."
+        },
+        jmeter: {
+            title: "JMeter",
+            text: "Apache JMeter es una herramienta de código abierto basada en Java, diseñada para realizar pruebas de carga y rendimiento, así como pruebas funcionales. Originalmente desarrollada para probar aplicaciones web, se ha expandido para soportar otros protocolos. Es altamente extensible y permite simular cargas pesadas en servidores, redes o objetos para analizar su rendimiento bajo diferentes condiciones."
+        },
+        neoload: {
+            title: "NeoLoad",
+            text: "NeoLoad, de Neotys (ahora parte de Tricentis), es una plataforma de pruebas de rendimiento diseñada para aplicaciones web y móviles. Se enfoca en la agilidad y la automatización, permitiendo diseñar, ejecutar y analizar pruebas de carga de manera rápida. Ofrece integración con herramientas de CI/CD y un enfoque sin código para la creación de scripts de prueba."
+        },
+        k6: {
+            title: "K6",
+            text: "K6, de Grafana Labs, es una herramienta moderna de pruebas de carga de código abierto para desarrolladores e ingenieros de pruebas. Los scripts se escriben en JavaScript (ES2015/ES6) y se enfoca en ser fácil de usar, flexible y potente. K6 está diseñado para integrarse bien en los flujos de trabajo de desarrollo y es ideal para pruebas continuas de rendimiento."
+        }
+    };
+
+    function showContent(optionKey) {
+        const displayArea = document.getElementById('infoDisplay');
+        const titleElement = document.getElementById('contentTitle');
+        const textElement = document.getElementById('contentText');
+
+        if (contentData[optionKey]) {
+            titleElement.textContent = contentData[optionKey].title;
+            textElement.textContent = contentData[optionKey].text;
+            displayArea.style.display = 'block';
+        } else {
+            displayArea.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
