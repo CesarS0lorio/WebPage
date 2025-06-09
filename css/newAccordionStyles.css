@@ -1,0 +1,103 @@
+@charset "UTF-8"; /* css/newAccordionStyles.css*/
+.accordion-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.accordion-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-item {
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #e7e7e7;
+    color: #333;
+    cursor: pointer;
+    padding: 18px 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover,
+.accordion-header.active {
+    background-color: #d1d1d1;
+}
+
+.accordion-header::after {
+    content: "\02795";
+    font-size: 14px;
+    color: #3a7a3d;
+    float: right;
+    margin-left: 10px;
+    font-family: "Segoe UI Symbol", "Apple Symbols", "Symbola", Arial, sans-serif !important;
+    font-weight: bold !important;
+}
+
+.accordion-header.active::after {
+    content: "\2796";
+    font-size: 14px;
+    color: #994d95;
+    float: right;
+    margin-left: 10px;
+
+    font-family: "Segoe UI Symbol", "Apple Symbols", "Symbola", Arial, sans-serif !important;
+    font-weight: bold !important;
+}
+
+.accordion-content {
+    padding: 0 20px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out, padding-top 0.35s ease-out, padding-bottom 0.35s ease-out;
+}
+
+.accordion-content h3 {
+    margin-top: 15px;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.accordion-content p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.accordion-content ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.accordion-content li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.accordion-content strong {
+    color: #333;
+}

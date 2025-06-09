@@ -1,0 +1,916 @@
+/* css/styles.css */
+
+body {
+    font-family: Arial, sans-serif; /* Changed from sans-serif to Arial, sans-serif as per new styles */
+    margin: 0; /* Added from new styles */
+    padding: 0; /* Added from new styles */
+    display: flex; /* Added from new styles */
+    flex-direction: column; /* Added from new styles */
+    height: 100vh; /* Added from new styles */
+    background-color: #f4f4f4; /* Kept from original inline styles */
+}
+
+/* Styles from the new CSS block provided by the user */
+.title-section {
+    background-color: #111827;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.main-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar-section {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-section > ul > li > span {
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar-section > ul > li > a {
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+
+}
+
+
+.sidebar-section ul ul {
+    list-style-type: none;
+    padding-left: 20px;
+    display: none; /* Submenus hidden by default */
+}
+
+.sidebar-section ul ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 0;
+}
+
+.sidebar-section ul ul li a:hover {
+    color: #007bff;
+}
+
+.content-section {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.content-section h2 { /* Specific to content-section h2 */
+    margin-top: 0;
+    color: #333; /* Kept from original inline styles for h2 */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding and border don't add to the width */
+}
+
+.form-group input.invalid {
+    border-color: red;
+}
+.form-group .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 3px;
+    min-height: 1.2em; /* Reserve space for error messages */
+}
+
+.buttons-container button { /* General button style from new CSS */
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttons-container button.view {
+    background-color: #28a745;
+    color: white;
+}
+
+.buttons-container button.clear {
+    background-color: #dc3545;
+    color: white;
+}
+
+#output-data {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    white-space: pre-wrap; /* Respects line breaks and spaces */
+    min-height: 60px; /* Give some initial height */
+    font-size: 0.95em; /* Added from combined styles */
+    line-height: 1.6; /* Added from combined styles */
+}
+
+/* Combined #output-data and #checkbox-status from new CSS */
+#output-data, #checkbox-status /* Estilo anterior para el div de estado, ya no se usará #checkbox-status */ {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    min-height: 60px;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+#checkbox-status-table { /* Estilo para la tabla específica si es necesario, pero los estilos generales de tabla ya aplican */
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+#checkbox-status-table th,
+#checkbox-status-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#checkbox-status-table th {
+    background-color: #f4f4f4; /* Changed from #f2f2f2 to match sidebar */
+    font-weight: bold;
+}
+
+.status-heading {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #333;
+}
+
+/* Estilos para los textos de estado Habilitado/Deshabilitado */
+.enabled-text {
+    color: green;
+}
+.disabled-text {
+    color: red;
+}
+
+/* Nuevos estilos para los textos de estado Seleccionado/No Seleccionado */
+.selected-text-blue {
+    color: blue;
+}
+.selected-text-gray {
+    color: gray;
+}
+
+/* Estilos generales para la tabla (ya los tenías, asegurando consistencia) */
+table { /* General table styles from new CSS */
+    border: 0px;
+    /* border-collapse: collapse; */ /* Overridden by specific table style */
+    padding: 5px;
+    border-spacing: 5px; /* Corrected property name */
+    border-collapse: separate; /* This will take precedence */
+}
+th { /* General th from new CSS */
+    background-color: #f2f2f2; /* This might be overridden by #checkbox-status-table th */
+}
+
+th, td { /* General th, td from new CSS */
+    border-bottom: none; /* This might be overridden by #checkbox-status-table td, th */
+}
+
+
+/* Styles from the original inline <style> block in buttons.html */
+/* General h2, if not inside .content-section */
+h2 {
+    color: #333;
+}
+
+/* General button styles from original inline styles - will be applied if not in .buttons-container */
+button {
+    padding: 10px 15px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white; /* Default text color for buttons */
+}
+
+.btn-blue { /* From original inline styles */
+    background-color: #007bff; /* Blue */
+}
+.btn-blue:hover { /* From original inline styles */
+    background-color: #0056b3;
+}
+
+.btn-red { /* From original inline styles */
+    background-color: #dc3545; /* Red */
+}
+.btn-red:hover { /* From original inline styles */
+    background-color: #c82333;
+}
+
+button:disabled { /* From original inline styles */
+    background-color: #6c757d; /* Gray for disabled */
+    cursor: not-allowed;
+}
+
+.message-area { /* From original inline styles */
+    display: inline-block;
+    margin-left: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.container { /* From original inline styles for buttons.html */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* Ensure it fits within the new flex layout if this page is meant to be the 'content-section' */
+    /* flex-grow: 1; /* Potentially needed if this container is the main content */
+    /* margin: 20px; /* Adjust if body margin is 0 */
+}
+
+.button-row { /* From original inline styles */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+h2 {
+    color: #333;
+}
+
+
+button {
+    padding: 10px 15px; /* padding vertical de 10px, horizontal de 15px */
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white; /* Default text color for buttons */
+    box-sizing: border-box; /* AÑADIDO: Asegura que padding y border se incluyan en el width/height total */
+    text-align: center;     /* AÑADIDO: Centra el texto del botón, útil con width fijo */
+}
+
+.btn-blue { /* From original inline styles */
+    background-color: #007bff; /* Blue */
+}
+.btn-blue:hover { /* From original inline styles */
+    background-color: #0056b3;
+}
+
+.btn-red { /* From original inline styles */
+    background-color: #dc3545; /* Red */
+}
+.btn-red:hover { /* From original inline styles */
+    background-color: #c82333;
+}
+
+button:disabled { /* From original inline styles */
+    background-color: #6c757d; /* Gray for disabled */
+    cursor: not-allowed;
+}
+
+/* NUEVA REGLA para igualar el tamaño de botones específicos */
+#doubleClickBtn,
+#clickBtn,
+#rightClickBtn {
+    width: 150px; /* Ajusta este valor según necesites. "Double Click" es el texto más largo. */
+                  /* La altura será la misma debido al padding vertical y font-size consistentes. */
+}
+
+
+.message-area { /* From original inline styles */
+    display: inline-block;
+    margin-left: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.container { /* From original inline styles for buttons.html */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.button-row { /* From original inline styles */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+#date-input-dp {
+    cursor: pointer; /* Indica que es clickeable */
+}
+
+#calendar-container-dp {
+    display: none; /* Inicialmente oculto */
+    border: 1px solid #ccc;
+    padding: 15px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 320px;
+    z-index: 1000; /* Asegurar que esté sobre otros elementos */
+    border-radius: 8px;
+}
+
+.calendar-header-dp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.calendar-header-dp select,
+.calendar-header-dp button.dp-nav-btn {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #555;
+}
+.calendar-header-dp select {
+    margin: 0 5px;
+}
+
+.calendar-header-dp button.dp-nav-btn:hover {
+    background-color: #e9e9e9;
+}
+
+.calendar-day-names-dp, .calendar-grid-dp {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.calendar-day-names-dp span {
+    font-weight: bold;
+    padding: 8px 0;
+    color: #555;
+}
+
+.calendar-grid-dp .dp-day-cell {
+    padding: 10px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid transparent; /* Para mantener el layout al hacer hover/focus */
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.calendar-grid-dp .dp-day-cell:hover:not(.dp-other-month) {
+    background-color: #e6f2ff; /* Azul claro para hover */
+    border-color: #cce0ff;
+}
+
+.calendar-grid-dp .dp-day-cell.dp-other-month {
+    color: #bbb;
+    cursor: default;
+}
+.calendar-grid-dp .dp-day-cell.dp-other-month:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.calendar-grid-dp .dp-day-cell.dp-current-day {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+.calendar-grid-dp .dp-day-cell.dp-current-day:hover {
+    background-color: #0056b3;
+}
+
+.calendar-footer-dp {
+    margin-top: 12px;
+    text-align: right;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.calendar-footer-dp button.dp-action-btn {
+    padding: 8px 15px;
+    margin-left: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+.calendar-footer-dp button.dp-action-btn:hover {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+}
+.calendar-footer-dp button#today-button-dp {
+    background-color: #28a745; /* Verde */
+    color: white;
+    border-color: #1e7e34;
+}
+.calendar-footer-dp button#today-button-dp:hover {
+    background-color: #218838;
+}
+
+/* css/styles.css - Estilos para botones adicionales del DatePicker */
+
+.additional-actions-dp {
+    margin-top: 20px; /* Espacio arriba de los botones */
+}
+
+.additional-actions-dp button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.additional-actions-dp .dp-view-btn {
+    background-color: #28a745; /* Verde */
+    color: white;
+    border-color: #1e7e34;
+}
+.additional-actions-dp .dp-view-btn:hover {
+    background-color: #218838;
+}
+
+.additional-actions-dp .dp-clear-btn {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    border-color: #c82333;
+}
+.additional-actions-dp .dp-clear-btn:hover {
+    background-color: #c82333;
+}
+
+#selected-date-message-area {
+    margin-top: 15px;
+    min-height: 1.5em; /* Para evitar saltos de layout */
+    font-weight: bold;
+    color: #333; /* Color de texto oscuro */
+}
+
+/* Styles for the Menu.html dropdown */
+#menu-container {
+    width: 100%;
+}
+
+.top-nav-menu {
+    background-color: #333; /* Dark background for the menu bar */
+    overflow: hidden;
+    width: 100%;
+}
+
+.top-nav-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.top-nav-menu > ul > li {
+    float: left;
+}
+
+.top-nav-menu li a, .top-nav-menu li .dropbtn-menu {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.top-nav-menu li a:hover,
+.top-nav-menu li .dropbtn-menu:hover,
+.dropdown-menu:hover .dropbtn-menu {
+    background-color: #555; /* Darker shade on hover/active */
+}
+
+.top-nav-menu li.dropdown-menu {
+    display: inline-block;
+}
+
+.dropdown-content-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Light background for dropdown items */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1001; /* Ensure it's above other content within content-area */
+}
+
+.dropdown-content-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #bdbfbe; /* Lighter grey on hover */
+}
+
+.dropdown-content-menu a:hover {
+    background-color: #f1f1f1; /* Lighter grey on hover */
+}
+
+/* Make dropdown visible on hover */
+.top-nav-menu ul > li.dropdown-menu:hover .dropdown-content-menu {
+    display: block;
+}
+
+.menu-content-area {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    min-height: 150px;
+    background-color: #fff; /* Ensure it has a background */
+}
+
+.menu-content-area h2 {
+    margin-top: 0;
+    color: #333; /* Standard heading color */
+}
+
+
+.tabs-container-bdd {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tab-nav-list-bdd {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 0 10px;
+    background-color: #f8f9fa;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.tab-bdd {
+    padding: 12px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: 500;
+    color: #007bff;
+    position: relative;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    margin-right: 5px; /* Spacing between tabs */
+    border-bottom: 3px solid transparent; /* For active indicator */
+}
+
+.tab-bdd:hover {
+    color: #0056b3;
+}
+
+.tab-bdd.active {
+    color: #0056b3;
+    font-weight: 600;
+    border-bottom-color: #007bff;
+}
+
+.tab-bdd:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+
+.tab-content-bdd {
+    padding: 20px;
+}
+
+.tab-panel-bdd {
+    border-top: none;
+    animation: fadeInTabs 0.5s ease-in-out;
+}
+
+.tab-panel-bdd h3 {
+    margin-top: 0;
+    color: #343a40;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.tab-panel-bdd p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+    color: #495057;
+}
+
+.tab-panel-bdd ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-bottom: 12px;
+}
+.tab-panel-bdd ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.tab-panel-bdd[hidden] {
+    display: none;
+}
+
+.gherkin-code-block {
+    background-color: #2d2d2d; /* Dark background for code */
+    color: #f8f8f2; /* Light text */
+    padding: 15px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+    overflow-x: auto; /* For horizontal scrolling if needed */
+    margin: 15px 0;
+    white-space: pre; /* Preserve whitespace and line breaks */
+}
+.gherkin-code-block code {
+    font-family: inherit; /* Ensure code tag inherits font */
+}
+
+
+@keyframes fadeInTabs {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* css/styles.css - Estilos para Modales Personalizados de Alerta */
+
+.alert-buttons-container {
+    padding: 10px 0;
+}
+
+.alert-buttons-container button {
+    margin-right: 10px;
+    /* Utiliza clases existentes como btn-blue o define nuevas si es necesario */
+}
+
+/* Modal Overlay & Content */
+.modal-custom {
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top - make sure it's higher than other z-indexes if needed */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity - overlay */
+    display: flex; /* Used to center the modal content */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+}
+
+.modal-custom[hidden] {
+    display: none;
+}
+
+.modal-custom-content {
+    background-color: #fefefe;
+    margin: auto; /* Auto margins for centering, works with flex too */
+    padding: 0; /* Header/Body/Footer will have their own padding */
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Maximum width */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.modal-custom-header {
+    padding: 10px 16px;
+    background-color: #007bff; /* Similar to btn-blue */
+    color: white;
+    border-top-left-radius: 7px; /* Match content radius */
+    border-top-right-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-custom-header h3 {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+.modal-custom-close-btn {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.modal-custom-close-btn:hover,
+.modal-custom-close-btn:focus {
+    color: #f0f0f0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-custom-body {
+    padding: 15px 16px;
+    line-height: 1.6;
+    color: #333;
+}
+.modal-custom-body p {
+    margin: 0 0 10px 0;
+}
+.modal-custom-body p:last-child {
+    margin-bottom: 0;
+}
+
+
+.modal-custom-footer {
+    padding: 10px 16px;
+    background-color: #f9f9f9;
+    text-align: right;
+    border-bottom-left-radius: 7px; /* Match content radius */
+    border-bottom-right-radius: 7px;
+    border-top: 1px solid #eee;
+}
+
+.modal-custom-footer button {
+    /* Styles are already applied by .btn-blue, .btn-red, etc.
+       You can add specific margin if needed */
+    margin-left: 8px;
+}
+
+/* Estilo para un botón gris como 'Cancel' si no existe */
+.btn-grey {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+}
+.btn-grey:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+.windows-buttons-container {
+    padding: 10px 0;
+    margin-bottom: 15px; /* Espacio antes del área de mensajes */
+}
+
+.windows-buttons-container button {
+    margin-right: 10px;
+    /* Las clases .btn-blue ya deberían aplicar el estilo azul.
+       Si se necesitan más estilos específicos para estos botones, agrégalos aquí. */
+}
+
+.windows-buttons-container button:last-child {
+    margin-right: 0;
+}
+
+/* css/styles.css - Adiciones para la página Frames */
+
+.frames-container {
+    margin-top: 20px;
+}
+
+.frames-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.frames-table th,
+.frames-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top; /* Alinear contenido arriba para celdas con iframes */
+}
+
+.frames-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.frames-table .frame-cell {
+    /* Celda que contiene el iframe principal */
+    height: 350px; /* Altura fija para la celda del iframe */
+}
+
+.main-iframe-style {
+    width: 100%;
+    height: 100%; /* El iframe principal ocupa toda la altura de su celda */
+    border: 1px solid #007bff; /* Borde azul para el iframe principal */
+    box-sizing: border-box;
+}
+
+/* Los estilos para el iframe anidado están definidos dentro del srcdoc del iframe principal
+   para asegurar que se apliquen correctamente dentro de ese contexto de documento. */
+
+.frames-table ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+.frames-table ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+.author-footer {
+    background-color: #111827; /* A professional dark blue-gray */
+    color: #9ca3af; /* A soft, medium gray for text */
+    padding: 25px 20px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    border-top: 1px solid #374151; /* A subtle border to separate from content */
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+}
+
+.author-footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Provides nice spacing between the text and the icon */
+}
+
+.author-footer p {
+    margin: 0; /* Removes default paragraph margin */
+}
+
+.author-footer a {
+    color: #a5b4fc; /* A pleasant light indigo, highly visible on the dark background */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+    display: inline-flex; /* Ensures the icon aligns correctly */
+    align-items: center;
+}
+
+.author-footer a:hover {
+    color: #ffffff; /* Changes color to white on hover for a clean effect */
+}
+
+.author-footer .linkedin-svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* The SVG icon will inherit the link's color */
+}
