@@ -1,0 +1,46 @@
+<h2>Alerts</h2>
+
+<div class="container">
+    <p>Interact with custom alert and confirmation dialogs.</p>
+    <div class="alert-buttons-container">
+        <button id="showAlertBtn" class="btn-blue">Alert</button>
+        <button id="showConfirmBtn" class="btn-blue">Confirm</button>
+    </div>
+
+    <div id="alert-result" class="message-area" style="margin-top: 15px; min-height: 1.5em;">
+    <!-- Messages from confirm dialog will appear here -->
+    </div>
+</div>
+
+    <!-- Custom Alert Modal Structure (Initially Hidden) -->
+    <div id="customAlertModal" class="modal-custom" hidden>
+        <div class="modal-custom-content">
+            <div class="modal-custom-header">
+                <h3 id="customAlertTitle">Alert</h3>
+                <button id="customAlertCloseBtn" class="modal-custom-close-btn" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-custom-body">
+                <p id="customAlertMessage">This is an alert message.</p>
+            </div>
+            <div class="modal-custom-footer">
+                <button id="customAlertOkBtn" class="btn-blue">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Confirm Modal Structure (Initially Hidden) -->
+    <div id="customConfirmModal" class="modal-custom" hidden>
+        <div class="modal-custom-content">
+            <div class="modal-custom-header">
+                <h3 id="customConfirmTitle">Confirmation</h3>
+                <button id="customConfirmCloseBtn" class="modal-custom-close-btn" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-custom-body">
+                <p id="customConfirmMessage">This is an alert to confirm.</p>
+            </div>
+            <div class="modal-custom-footer">
+                <button id="customConfirmCancelBtn" class="btn-grey">Cancel</button>
+                <button id="customConfirmOkBtn" class="btn-blue">OK</button>
+            </div>
+        </div>
+    </div>

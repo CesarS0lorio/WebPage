@@ -1,0 +1,61 @@
+<div class="api-container">
+    <h2>API Request</h2>
+
+    <div class="container">
+
+    <p>Click a button to simulate an API request and see the server's response.</p>
+
+    <div class="api-button-group">
+        <h4>2xx Success</h4>
+        <div class="button-grid">
+            <button class="api-button" data-method="GET" data-url="https://jsonplaceholder.typicode.com/posts/1">200 OK</button>
+            <button class="api-button" data-method="POST" data-url="https://jsonplaceholder.typicode.com/posts">201 Created</button>
+            <button class="api-button" data-method="GET" data-url="https://httpbin.org/status/204">204 No Content</button>
+        </div>
+    </div>
+
+    <div class="api-button-group">
+        <h4>3xx Redirection</h4>
+        <div class="button-grid">
+            <button class="api-button" data-method="GET" data-url="https://httpbin.org/status/302">302 Found</button>
+        </div>
+    </div>
+
+    <div class="api-button-group">
+        <h4>4xx Client Error</h4>
+        <div class="button-grid">
+            <button class="api-button" data-method="GET" data-url="https://httpbin.org/status/400">400 Bad Request</button>
+            <button class="api-button" data-method="GET" data-url="https://httpbin.org/status/401">401 Unauthorized</button>
+            <button class="api-button" data-method="GET" data-url="https://httpbin.org/status/403">403 Forbidden</button>
+            <button class="api-button" data-method="GET" data-url="https://jsonplaceholder.typicode.com/posts/1000">404 Not Found</button>
+        </div>
+    </div>
+
+    <div class="api-button-group">
+        <h4>5xx Server Error</h4>
+        <div class="button-grid">
+            <button class="api-button" data-method="GET" data-url="https://httpbin.org/status/500">500 Internal Server Error</button>
+            <button class="api-button" data-method="GET" data-url="https://httpbin.org/status/502">502 Bad Gateway</button>
+            <button class="api-button" data-method="GET" data-url="https://httpbin.org/status/504">504 Gateway Timeout</button>
+        </div>
+    </div>
+</div>
+    <br>
+    <br>
+    <div class="container">
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <p>Making request...</p>
+    </div>
+
+    <div class="response-area" id="response-area">
+        <div class="response-header">
+            Response: <span id="status-code"></span>
+        </div>
+        <div class="response-body-title">
+            Response Body:
+        </div>
+        <pre id="response-body">{ "message": "Waiting for an API request..." }</pre>
+    </div>
+</div>
+</div>

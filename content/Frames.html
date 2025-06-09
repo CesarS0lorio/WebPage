@@ -1,0 +1,109 @@
+<h2>FRAMES</h2>
+
+<div class="container">
+
+<p>Iframes (Inline Frames) allow embedding another HTML document within the current HTML document.</p>
+
+<div class="frames-container">
+    <table class="frames-table">
+        <thead>
+        <tr>
+            <th>Concept</th>
+            <th>Description & Example</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>HTML Frames (iframes)</td>
+            <td>
+                Iframes allow you to conceptually divide a portion of your page to load independent content.
+                Each iframe is essentially an embedded browser window. They are useful for displaying third-party content,
+                maps, videos, or for isolating parts of an application.
+            </td>
+        </tr>
+        <tr>
+            <td>Main Frame</td>
+            <td class="frame-cell">
+                <iframe id="mainFrame" title="Main Frame Example" class="main-iframe-style"
+                        srcdoc="<!DOCTYPE html>
+                                    <html lang='en' style='height: 100%;'>
+                                    <head>
+                                        <meta charset='UTF-8'>
+                                        <title>Main Frame</title>
+                                        <style>
+                                            body {
+                                                margin: 0;
+                                                font-family: Arial, sans-serif;
+                                                background-color: #f0f0f0;
+                                                color: #333;
+                                                height: 100%;
+                                                box-sizing: border-box;
+                                                display: flex;
+                                                flex-direction: column;
+                                            }
+                                            p.main-frame-text {
+                                                padding: 15px;
+                                                margin: 0;
+                                                flex-shrink: 0;
+                                            }
+                                        </style>
+                                    </head>
+                                    <body>
+                                        <p class='main-frame-text'>Hi, this is a frame</p>
+                                        <div class='nested-iframe-container'>
+                                            <iframe id='nestedFrame' title='Nested Frame Example' class='nested-iframe-style'
+                                                    srcdoc='<!DOCTYPE html>
+                                                                <style>
+                                                                    html { height: 100%; }
+                                                                    body {
+                                                                        height: 100%;
+                                                                        margin: 0;
+                                                                        padding: 20px;
+                                                                        box-sizing: border-box;
+                                                                        display: block;
+                                                                        font-family: Arial, sans-serif;
+                                                                        background-color: #e9ecef;
+                                                                        color: #333;
+                                                                        text-align: center;
+                                                                        overflow: auto;
+                                                                    }
+                                                                    p {
+                                                                        margin: 5;
+                                                                    }
+                                                                    .nested-iframe-container {
+                                                                        width: 200px;
+                                                                        flex-grow: 1;
+                                                                        display: flex;
+                                                                        min-height: 0;
+                                                                    }
+                                                                    .nested-iframe-style {
+                                                                        width: 100%;
+                                                                        height: 100%;
+                                                                        border: 1px dashed #007bff;
+                                                                        box-sizing: border-box;
+                                                                </style>
+                                                                <p>Hello, this is a nested frame</p>
+                                                            </body>
+                                                            </html>'>
+                                            </iframe>
+                                        </div>
+                                    </body>
+                                    </html>">
+                </iframe>
+            </td>
+        </tr>
+        <tr>
+            <td>Considerations for iframes</td>
+            <td>
+                <ul>
+                    <li><strong>Security:</strong> Be careful when embedding content from untrusted sites due to potential security risks (e.g., clickjacking). Attributes like <code>sandbox</code> can mitigate some risks.</li>
+                    <li><strong>SEO:</strong> Content within iframes may not be indexed by search engines as part of the main page.</li>
+                    <li><strong>Usability and Accessibility:</strong> Iframes can present challenges for keyboard navigation and screen readers if not implemented carefully (e.g., by using the <code>title</code> attribute).</li>
+                    <li><strong>Performance:</strong> Each iframe loads a complete document, which can impact page load time.</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>

@@ -1,0 +1,49 @@
+<h2>DatePicker</h2>
+
+<div class="container">
+    <p>Click the field below to select a date.</p>
+    <div class="form-group">
+        <label for="date-input-dp">Select a Date:</label>
+        <input type="text" id="date-input-dp" placeholder="dd/mm/yyyy" readonly>
+    </div>
+
+    <div id="calendar-container-dp">
+        <div class="calendar-header-dp">
+            <button id="prev-month-dp" class="dp-nav-btn">&lt;</button>
+            <div>
+                <select id="month-select-dp" aria-label="Select Month"></select>
+                <select id="year-select-dp" aria-label="Select Year"></select>
+            </div>
+            <button id="next-month-dp" class="dp-nav-btn">&gt;</button>
+        </div>
+
+        <div class="calendar-day-names-dp">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+        </div>
+
+        <div class="calendar-grid-dp" id="calendar-days-dp">
+        </div>
+
+        <div class="calendar-footer-dp">
+            <button id="today-button-dp" class="dp-action-btn">Today</button>
+            <button id="clear-button-dp" class="dp-action-btn">Clear</button>
+        </div>
+    </div>
+    <div class="additional-actions-dp" style="margin-top: 20px;">
+        <button id="view-selected-date-btn" class="dp-view-btn">View</button>
+        <button id="clear-selected-date-btn" class="dp-clear-btn">Clear</button>
+    </div>
+
+</div>
+<br>
+<div class="container">
+
+    <div id="selected-date-message-area" style="margin-top: 15px; min-height: 1.5em; font-weight: bold;"></div>
+
+</div>

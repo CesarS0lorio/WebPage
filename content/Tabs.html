@@ -1,0 +1,80 @@
+<h2>Tabs</h2>
+<p>
+<h3>Gherkin BDD</h3>
+
+<p>Learn about the key components of Gherkin syntax used in Behavior-Driven Development (BDD).</p>
+
+<div class="tabs-container-bdd">
+    <div class="tab-nav-list-bdd" role="tablist" aria-label="Gherkin BDD Information">
+        <button class="tab-bdd active" id="tab-gherkin" role="tab" aria-selected="true" aria-controls="panel-gherkin" tabindex="0">Gherkin</button>
+        <button class="tab-bdd" id="tab-scenario" role="tab" aria-selected="false" aria-controls="panel-scenario" tabindex="-1">Scenario</button>
+        <button class="tab-bdd" id="tab-given" role="tab" aria-selected="false" aria-controls="panel-given" tabindex="-1">Given</button>
+        <button class="tab-bdd" id="tab-when" role="tab" aria-selected="false" aria-controls="panel-when" tabindex="-1">When</button>
+        <button class="tab-bdd" id="tab-then" role="tab" aria-selected="false" aria-controls="panel-then" tabindex="-1">Then</button>
+    </div>
+
+    <div class="tab-content-bdd">
+        <div class="tab-panel-bdd active" id="panel-gherkin" role="tabpanel" aria-labelledby="tab-gherkin" tabindex="0">
+            <h3>What is Gherkin?</h3>
+            <p>Gherkin is a business-readable, domain-specific language that helps software teams describe behavior without detailing how that behavior is implemented. It is used in Behavior-Driven Development (BDD) to write acceptance criteria or tests in a way that both technical and non-technical team members can understand.</p>
+            <p>Key characteristics of Gherkin:</p>
+            <ul>
+                <li><strong>Plain Language:</strong> Written in a structured but natural language.</li>
+                <li><strong>Line-Oriented:</strong> Each line usually starts with a keyword.</li>
+                <li><strong>Structured:</strong> Follows a specific syntax to define features, scenarios, and steps.</li>
+                <li><strong>Executable Specifications:</strong> Gherkin files can be used as input to testing frameworks (like Cucumber, SpecFlow) to automate tests.</li>
+            </ul>
+        </div>
+        <div class="tab-panel-bdd" id="panel-scenario" role="tabpanel" aria-labelledby="tab-scenario" tabindex="0" hidden>
+            <h3>Gherkin Scenario Example</h3>
+            <p>A Scenario is a concrete example that illustrates a business rule. It consists of a list of steps.</p>
+            <pre class="gherkin-code-block"><code>Feature: User Login
+
+  Scenario: Successful login with valid credentials
+    Given the user is on the login page
+    When the user enters "valid_username" as username
+    And the user enters "valid_password" as password
+    And the user clicks the "Login" button
+    Then the user should be redirected to the dashboard
+    And the user should see a "Welcome" message</code></pre>
+            <p>Scenarios are designed to be concise and focused on a single piece of functionality or business rule. They are the core of a Gherkin feature file.</p>
+        </div>
+        <div class="tab-panel-bdd" id="panel-given" role="tabpanel" aria-labelledby="tab-given" tabindex="0" hidden>
+            <h3>The "Given" Step</h3>
+            <p><strong>Given</strong> steps are used to describe the initial context or preconditions of the system before the user (or an external system) starts interacting with it. They put the system into a known state.</p>
+            <ul>
+                <li>Sets up the scene for the scenario.</li>
+                <li>Should describe a state, not an action.</li>
+                <li>Multiple <code>Given</code> steps can be used, or they can be joined with <code>And</code> or <code>But</code>.</li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre class="gherkin-code-block"><code>Given the user is on the login page
+And the user has a valid account</code></pre>
+        </div>
+        <div class="tab-panel-bdd" id="panel-when" role="tabpanel" aria-labelledby="tab-when" tabindex="0" hidden>
+            <h3>The "When" Step</h3>
+            <p><strong>When</strong> steps describe an event or an action performed by the user or an external component. This is the part of the scenario where the interaction with the system occurs.</p>
+            <ul>
+                <li>Represents the key action the user performs.</li>
+                <li>Typically, there is one central <code>When</code> step per scenario, though multiple can be used with <code>And</code> or <code>But</code> to describe a sequence of actions.</li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre class="gherkin-code-block"><code>When the user enters "test_user" as username
+And the user enters "password123" as password
+And the user clicks the "Submit" button</code></pre>
+        </div>
+        <div class="tab-panel-bdd" id="panel-then" role="tabpanel" aria-labelledby="tab-then" tabindex="0" hidden>
+            <h3>The "Then" Step</h3>
+            <p><strong>Then</strong> steps are used to describe the expected outcome or result after the action in the <code>When</code> step has been performed. They are used to verify that the system behaves as expected.</p>
+            <ul>
+                <li>Asserts the outcome of the <code>When</code> step.</li>
+                <li>Should be an observable result.</li>
+                <li>Multiple <code>Then</code> steps can be used, or they can be joined with <code>And</code> or <code>But</code> to check various outcomes.</li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre class="gherkin-code-block"><code>Then the user should be successfully logged in
+And the user should be redirected to the account page
+And a success message "Login successful!" should be displayed</code></pre>
+        </div>
+    </div>
+</div>

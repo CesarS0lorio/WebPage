@@ -1,0 +1,21 @@
+<h2>TextBox</h2>
+<div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="e.g. Cesar Solorio">
+    <div class="error-message" id="name-error"></div>
+</div>
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="e.g. cesar.solorio@mail.com">
+    <div class="error-message" id="email-error"></div>
+</div>
+<div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" id="description" placeholder="e.g. This project is just for testing">
+    <div class="error-message" id="description-error"></div>
+</div>
+<div class="buttons-container">
+    <button class="view" onclick="textBoxLib.viewData()">View</button>
+    <button class="clear" onclick="textBoxLib.clearData()">Clear</button>
+</div>
+<div id="output-data"></div>

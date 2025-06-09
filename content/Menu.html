@@ -1,0 +1,30 @@
+<div id="menu-container">
+  <h2>Menu</h2>
+  <nav class="top-nav-menu">
+    <ul>
+      <li><a href="#" data-menu-key="qaToolsMenu">QA Tools</a></li>
+      <li class="dropdown-menu">
+        <a href="javascript:void(0)" class="dropbtn-menu">Automation Tools</a>
+        <div class="dropdown-content-menu">
+          <a href="#" data-menu-key="seleniumMenu">Selenium</a>
+          <a href="#" data-menu-key="appiumMenu">Appium</a>
+          <a href="#" data-menu-key="playwrightMenu">Playwright</a>
+        </div>
+      </li>
+      <li class="dropdown-menu">
+        <a href="javascript:void(0)" class="dropbtn-menu">Performance Testing</a>
+        <div class="dropdown-content-menu">
+          <a href="#" data-menu-key="loadrunnerMenu">LoadRunner</a>
+          <a href="#" data-menu-key="jmeterMenu">JMeter</a>
+          <a href="#" data-menu-key="neoloadMenu">NeoLoad</a>
+          <a href="#" data-menu-key="k6Menu">K6</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="menuInfoDisplay" class="menu-content-area" style="display:none;">
+    <h2 id="menuContentTitle"></h2>
+    <p id="menuContentText"></p>
+  </div>
+</div>
