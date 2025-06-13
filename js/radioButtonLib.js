@@ -2,7 +2,7 @@
 
 function initializeRadioButtons() { // Changed function name to English as well
     const petNameInput = document.getElementById('petNameInput');
-    const viewPetInfoButton = document.getElementById('viewPetInfoButton');
+    const viewPetInfoButton = document.getElementById('viewBtn');
     const petInfoOutput = document.getElementById('petInfoOutput');
     const ageRangeRadios = document.querySelectorAll('input[name="ageRange"]');
 
